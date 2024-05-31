@@ -1,17 +1,17 @@
 {
   "private": true,
-  "displayName": "Plugin Name",
-  "name": "homebridge-plugin-name",
-  "version": "1.0.0",
-  "description": "A short description about what your plugin does.",
+  "displayName": "Homebridge Cecotec Ceiling Fan",
+  "name": "homebridge-cecotec-ceiling-fan",
+  "version": "0.0.1",
+  "description": "A Homebridge plugin for Cecotec ceiling fan",
   "license": "Apache-2.0",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/USERNAME/GITHUB_PROJECT_NAME.git"
+    "url": "git+https://github.com/irsath/homebridge-cecotec-ceiling-fan.git"
   },
   "bugs": {
-    "url": "https://github.com/USERNAME/GITHUB_PROJECT_NAME/issues"
+    "url": "https://github.com/irsath/homebridge-cecotec-ceiling-fan/issues"
   },
   "engines": {
     "node": "^18.17.0 || ^20.9.0",
@@ -25,7 +25,12 @@
     "prepublishOnly": "npm run lint && npm run build"
   },
   "keywords": [
-    "homebridge-plugin"
+    "homebridge-plugin",
+    "cecotec",
+    "ceiling",
+    "fan",
+    "ceiling fan",
+    "tuya"
   ],
   "devDependencies": {
     "@types/node": "^20.12.12",
@@ -37,5 +42,8 @@
     "rimraf": "^5.0.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "tuyapi": "^7.5.2"
   }
 }
