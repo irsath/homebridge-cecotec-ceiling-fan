@@ -69,7 +69,7 @@ export class CeilingFanAccessory {
       const isActive = data.dps['1'] as boolean | undefined;
       if (isActive !== undefined) {
         this.state.fanStatus = isActive ? this.platform.Characteristic.Active.ACTIVE : this.platform.Characteristic.Active.INACTIVE;
-        this.platform.log.info('Update fan on', this.state.fanStatus);
+        this.platform.log.info('Update: Fan status ', isActive ? 'on' : 'off');
         this.fanService.updateCharacteristic(this.platform.Characteristic.Active, this.state.fanStatus);
       }
     };
@@ -94,7 +94,8 @@ export class CeilingFanAccessory {
         this.state.rotationDirection = rotation === 'forward'
           ? this.platform.Characteristic.RotationDirection.CLOCKWISE
           : this.platform.Characteristic.RotationDirection.COUNTER_CLOCKWISE;
-        this.platform.log.info('Update fan rotation', this.state.rotationDirection);
+        this.platform.log.info('Update: Fan rotation ',
+          this.state.rotationDirection === this.platform.Characteristic.RotationDirection.CLOCKWISE ? 'clockwise' : 'counter-clockwise');
         this.fanService.updateCharacteristic(this.platform.Characteristic.RotationDirection, this.state.rotationDirection);
       }
     };
@@ -125,7 +126,7 @@ export class CeilingFanAccessory {
       if (speed !== undefined) {
         const percent = Math.floor(100 / 6 * speed);
         this.state.rotationSpeedStep = speed;
-        this.platform.log.info('Update fan speed (percent: ', percent, ' | step: ', speed, ')');
+        this.platform.log.info('Update: Fan speed (', percent, '% | speed: ', speed, ')');
         this.fanService.updateCharacteristic(this.platform.Characteristic.RotationSpeed, percent);
       }
     };
@@ -152,7 +153,8 @@ export class CeilingFanAccessory {
       if (swing !== undefined) {
         this.state.swingMode =
           swing === 'sleep' ? this.platform.Characteristic.SwingMode.SWING_ENABLED : this.platform.Characteristic.SwingMode.SWING_DISABLED;
-        this.platform.log.info('Update fan swing', this.state.swingMode);
+        this.platform.log.info('Update: Fan swing ',
+          this.state.swingMode === this.platform.Characteristic.SwingMode.SWING_ENABLED ? 'enabled' : 'disabled');
         this.fanService.updateCharacteristic(this.platform.Characteristic.SwingMode, this.state.swingMode);
       }
     };
@@ -177,7 +179,7 @@ export class CeilingFanAccessory {
         const isOn = data.dps['15'] as boolean | undefined;
         if (isOn !== undefined) {
           this.state.lightOn = isOn;
-          this.platform.log.info('Update light on', this.state.lightOn);
+          this.platform.log.info('Update: Light ', this.state.lightOn ? 'on' : 'off');
           this.lightService.updateCharacteristic(this.platform.Characteristic.On, this.state.lightOn);
         }
       };
@@ -202,7 +204,7 @@ export class CeilingFanAccessory {
         const brightness = data.dps['16'] as number | undefined;
         if (brightness !== undefined) {
           this.state.lightBrightness = brightness;
-          this.platform.log.info('Update brightness', this.state.lightBrightness);
+          this.platform.log.info('Update: Brightness ', this.state.lightBrightness, '%');
           this.lightService.updateCharacteristic(this.platform.Characteristic.Brightness, this.state.lightBrightness);
         }
       };
