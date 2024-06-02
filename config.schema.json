@@ -1,5 +1,5 @@
 {
-  "pluginAlias": "ExampleHomebridgePlugin",
+  "pluginAlias": "HomebridgeCecotecCeilingFan",
   "pluginType": "platform",
   "singular": true,
   "schema": {
@@ -9,7 +9,54 @@
         "title": "Name",
         "type": "string",
         "required": true,
-        "default": "Example Dynamic Platform"
+        "default": "Cecotec Ceiling Fan"
+      },
+      "devices": {
+        "type": "array",
+        "title": "Devices",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "title": "ID",
+              "description": "Tuya device ID",
+              "required": true
+            },
+            "key": {
+              "type": "string",
+              "title": "Key",
+              "description": "Tuya device key",
+              "required": true
+            },
+            "ip": {
+              "type": "string",
+              "title": "IP",
+              "description": "Tuya device IP",
+              "required": false
+            },
+            "version": {
+              "type": "string",
+              "title": "Version",
+              "description": "Tuya device version",
+              "default": "3.3",
+              "required": false
+            },
+            "name": {
+              "type": "string",
+              "title": "Device Name",
+              "description": "Name of the device",
+              "required": true,
+              "default": "Cecotec EnergySilence Aero 5600"
+            },
+            "hasLight": {
+              "type": "boolean",
+              "title": "Has Light",
+              "description": "Device has a light ?",
+              "required": true
+            }
+          }
+        }
       }
     }
   }

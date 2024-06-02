@@ -10,7 +10,7 @@
       "DOM",
       "ES2022"
     ],
-    "module": "ES2022",
+    "module": "CommonJS",
     "moduleResolution":"node",
     "sourceMap": true,
     "strict": true,

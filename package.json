@@ -1,11 +1,11 @@
 {
-  "private": true,
+  "private": false,
   "displayName": "Homebridge Cecotec Ceiling Fan",
   "name": "homebridge-cecotec-ceiling-fan",
   "version": "0.0.1",
   "description": "A Homebridge plugin for Cecotec ceiling fan",
   "license": "Apache-2.0",
-  "type": "module",
+  "type": "commonjs",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/irsath/homebridge-cecotec-ceiling-fan.git"
