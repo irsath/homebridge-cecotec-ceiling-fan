@@ -6,8 +6,6 @@ import {CeilingFanAccessory} from './platformAccessory';
 interface DeviceConfig {
   id: string;
   key: string;
-  ip: string;
-  version: string;
   name: string;
   hasLight: boolean;
 }
